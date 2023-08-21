@@ -1,0 +1,14 @@
+Bir değişken seçerken sonuç seri ya da dataframe olabilir. Seçim işlemi yaparken buna dikkat etmekte fayda var. 
+Örnek : df['age'] ----------------> Bu bir seridir.
+        df[['age']] ---------------> Bu bir dataframe dir.
+iloc ----------------------> Integer based selection
+loc -----------------------> Location based selection
+
+df.loc[0:3, :]
+df.iloc[0:3, 'age']
+df[(df['age'] > 50) & (df['gender'] == 'male')]
+
+pivot_table fonksiyonu satır sütun ve değer alır. Bu fonksiyonla örneğin binilen limanlar ve cinsiyete göre hayatta kalma oranını inceleyebiliriz.
+
+Dataframe de sütunlara işlem uygulamak istiyorsak apply fonksiyonunu çağırabiliriz. 
+Örnek : data['City'].apply(lambda x : x.upper())

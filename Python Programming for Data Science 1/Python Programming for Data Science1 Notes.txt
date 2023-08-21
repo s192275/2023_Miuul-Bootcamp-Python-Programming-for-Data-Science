@@ -1,0 +1,30 @@
+Elemanları iteratif bir şekilde gezip index ile ilgili işlemler yapmak istedğimizde enumarate kullanabiliriz.
+Örnek : students = ['Ali', 'Veli', 'Mahmut', 'Tankurt']
+for index, student in enumerate(students):
+	print(index, student)   gibi.
+Zip fonksiyonu 3 tane uzunlukları aynı ve farklı listelerde birlikte kullanımı sağlar.
+Örnek: students = ['Ali', 'Veli', 'Tankurt', 'Ahmet']
+       departments = ['PhD', 'Student', 'PhD', 'Student']
+       ages = [28, 21, 30, 24]
+       list(zip(students, departments, ages))
+
+Bunun outputu 3 listeyi tuple yapıp bir liste içerisinde birleştirir.
+
+lambda : fonksiyon yerine geçer. lambda x : x+5 gibi (x kısmı aldığı parametreyi belirtirken : den sonraki kısım parametreye yapılan işlemi belirtir.)
+map : for ile gezinmeyi daha hızlı yapar.
+list(map(fonksiyon_adı, iteratif_değişken))
+Örnek : salaries = [1000,2000,3000,4000,5000]
+list(map(lambda x: x*1.2, salaries))
+filter : filtreleme işlemi yapar.
+Örnek : list_store = [1,2,3,4,5,6,7,8,9,10]
+list(filter(lambda x : x % 2 == 0, list_store))
+
+########################COMPREHENSIONS##############################
+Comprehensions bizleri işlem yükünden kurtarır. Kullanımı basittir.
+Örnek : [new_salary(salary * 2) if salary < 3000 else new_salary(salary) for salary in salaries]
+[yapılacak_işlem + for döngüsü + if]
+[yapılacak_işlem + if + else + for_döngüsü] Syntax bu şekildedir.
+
+Dict Comprehensions
+{k : v**2 for (k,v) in dictionary.items()}
+{k.upper() : v**2 for (k,v) in dictionary.items()}
